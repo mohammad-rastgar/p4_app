@@ -32,11 +32,11 @@ sudo mn -c 2> /dev/null
 # minutes to give it time to start, then add the entries and put the switch
 # process back in the foreground
 set -m
-$P4C_BM_SCRIPT p4src/ARP.p4 --json ARP.json
+$P4C_BM_SCRIPT p4src/Simple_Routing.p4 --json Simple_Routing.json
 sudo echo "sudo" > /dev/null
 sudo PYTHONPATH=$PYTHONPATH:$BMV2_PATH/mininet/ python topo.py \
     --behavioral-exe $BMV2_PATH/targets/simple_switch/simple_switch \
-    --json ARP.json \
+    --json Simple_Routing.json \
     --cli $CLI_PATH
 
 echo "READY!!!"

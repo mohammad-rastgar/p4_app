@@ -132,9 +132,10 @@ def main():
 
     print "Ready !"
 
-    makeTerm(net['s1'],title="See Broadcast messages ",cmd="tcpdump -n -i s1-eth2 -Uw - | tcpdump -en -r - vlan;echo;echo;echo Last command: \x1B[32m'tcpdump -n -i s1-eth2 -Uw - | tcpdump -en -r - vlan'\x1B[0m; bash")
+    makeTerm(net['s1'],title="See request/reply messages",cmd="tcpdump -n -i s1-eth2 -Uw - | tcpdump -en -r - vlan;echo;echo;echo Last command: \x1B[32m'tcpdump -n -i s1-eth2 -Uw - | tcpdump -en -r - vlan'\x1B[0m; bash")
     
     makeTerm(net['h1'],title="Host H1",cmd="ping 192.168.100.2;echo;echo;echo Last command: \x1B[32mping 192.168.100.2 -i 1\x1B[0m; bash")
+    makeTerm(net['h2'],title="Host H2",cmd="ping 192.168.100.1;echo;echo;echo Last command: \x1B[32mping 192.168.100.1 -i 1\x1B[0m; bash")
 
     CLI( net )
     net.stop()

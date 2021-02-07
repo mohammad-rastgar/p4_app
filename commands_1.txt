@@ -12,3 +12,7 @@ mc_node_associate 3 0
 mc_node_associate 3 1
 table_set_default arp_manager broadcast
 
+table_add forward unicast 1 16 => 2 
+table_add forward unicast 2 16 => 1 
+
+
